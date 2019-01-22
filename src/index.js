@@ -82,8 +82,8 @@ const option = {
         },
     },
     yAxis: [
-        getYAxis(controller.variables[firstYAxisColor]),
-        getYAxis(controller.variables[secondYAxisColor])
+        getYAxis(controller.variables[firstYAxisColor], 'Bar'),
+        getYAxis(controller.variables[secondYAxisColor], 'Line')
     ],
     series: [{
             type: 'bar',
@@ -161,3 +161,5 @@ lineBar.on('click', params => {
         data: () => params.data.datum,
     });
 });
+
+console.log(lineBar);

@@ -73,9 +73,9 @@ export const getYAxisData = (data, metric) => {
     return getNormalMetricData(data);
 }
 
-export const getYAxis = color => ({
+export const getYAxis = (color, name) => ({
         type: 'value',
-        name: 'Bar',
+        name,
         axisLine: {
             lineStyle: {
                 color: color,
