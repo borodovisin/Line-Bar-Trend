@@ -45,6 +45,13 @@ echarts.registerProcessor(ecModel => {
 const lineBar = echarts.init(chartContainer);
 
 const option = {
+    textStyle: {
+        fontFamily: 'Source Pro, source-sans-pro,' +
+        ' Helvetica, Arial, sans-serif',
+        fontSize: '14',
+        fontWeight: 'normal',
+        fontStyle: 'normal'
+    },
     grid: {
         left: 35,
         top: 30,
