@@ -137,7 +137,7 @@ controller.update = data => {
 
 // Tooltip
 lineBar.on('mousemove', params => {
-    if (params && params.data && _.isObject(params.data.datum)) {
+    if (_.has(params, 'data.datum') && _.isObject(params.data.datum)) {
         controller.tooltip.show({
             x: params.event.event.clientX,
             y: params.event.event.clientY,
@@ -154,12 +154,12 @@ lineBar.on('mouseout', () => {
 
 // Menu bar
 lineBar.on('click', params => {
-    controller.tooltip.hide();
-    controller.menu.show({
-        x: params.event.event.clientX,
-        y: params.event.event.clientY,
-        data: () => params.data.datum,
-    });
+    if (_.has(params, 'data.datum') && _.isObject(params.data.datum)) {
+        controller.tooltip.hide();
+        controller.menu.show({
+            x: params.event.event.clientX,
+            y: params.event.event.clientY,
+            data: () => params.data.datum,
+        });
+    }
 });
-
-console.log(lineBar);
