@@ -60,7 +60,7 @@ const SIFormat = (number, digits=0) => {
 export const getFont = () => ({
     fontFamily: 'Source Pro, source-sans-pro, Helvetica, Arial, sans-serif',
     fontSize: '14',
-})
+});
 
 export const getMetricTooltip = params => {
     if (params && _.has(params, 'name') && _.has(params, 'color') && _.has(params, 'data.value')) {
