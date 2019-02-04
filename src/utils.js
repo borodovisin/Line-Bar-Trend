@@ -57,6 +57,11 @@ const SIFormat = (number, digits=0) => {
     return exponentialNumber * Math.pow(10, _.parseInt(exponential) - index * 3) + codeTable[index + 4];
 }
 
+export const getFont = () => ({
+    fontFamily: 'Source Pro, source-sans-pro, Helvetica, Arial, sans-serif',
+    fontSize: '14',
+})
+
 export const getMetricTooltip = params => {
     if (params && _.has(params, 'name') && _.has(params, 'color') && _.has(params, 'data.value')) {
         const label = getGeneralLabel();
@@ -85,6 +90,7 @@ export const getYAxis = (color, name) => ({
         axisLabel: {
             color: '#000',
             formatter: value => SIFormat(value, 2),
+            ...getFont(),
         },
         axisTick: {
             show: false,

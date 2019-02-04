@@ -10,7 +10,8 @@ import {
     secondDataAccessor, 
     getMetricTooltip, 
     getYAxisData,
-    getYAxis 
+    getYAxis,
+    getFont 
 } from './utils';
 
 import './index.css';
@@ -47,10 +48,6 @@ echarts.registerProcessor(ecModel => {
 const lineBar = echarts.init(chartContainer);
 
 const option = {
-    textStyle: {
-        fontFamily: 'Source Pro, source-sans-pro, Helvetica, Arial, sans-serif',
-        fontSize: '14',
-    },
     grid: {
         left: 40,
         top: 30,
@@ -79,6 +76,7 @@ const option = {
                 width: 2,
             }
         },
+        axisLabel: getFont(),
     },
     yAxis: [
         getYAxis(controller.variables[firstYAxisColor], 'Bar'),
